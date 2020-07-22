@@ -1,26 +1,11 @@
 require "bundler/setup"
 require "govuk-frontend"
-require 'yaml'
+require "json"
 
-def example_inputs(component_name)
-  yaml_file = File.read(File.join(File.dirname(__FILE__), "govuk-frontend/fixtures/input", component_name + ".yaml"))
+include GovukFrontend
 
-  YAML.load(yaml_file)["examples"]
-end
+def fixtures(component_name)
+  file = File.read(File.join(File.dirname(__FILE__), "../node_modules/govuk-frontend/govuk/components/", component_name + "/fixtures.json"))
 
-def example_output(path)
-  File.read(File.join(File.dirname(__FILE__), "govuk-frontend/fixtures/output", path)).strip
-end
-
-RSpec.configure do |config|
-
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
-
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  config.disable_monkey_patching!
-
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
+  JSON.parse(file)["fixtures"]
 end

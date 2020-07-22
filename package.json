@@ -1,0 +1,10 @@
+{
+  "name": "govuk-frontend-rails",
+  "license": "MIT",
+  "engines": {
+    "node": "12.19.x"
+  },
+  "devDependencies": {
+    "govuk-frontend": "3.9.1"
+  }
+}

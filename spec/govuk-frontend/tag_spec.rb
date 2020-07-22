@@ -1,14 +1,9 @@
-include GovukFrontend
+require "spec_helper"
 
-RSpec.describe GovukFrontend do
-
+RSpec.describe "tag" do
   it "outputs the right html" do
-
-    examples = example_inputs("tag")
-
-    examples.each do |example|
-      expect(govukTag(example["data"])).to eq(example_output("tag/#{example["name"]}.html"))
+    fixtures("tag").each do |example|
+      expect(govukTag(example["options"])).to eq(example["html"]), "HTML for example '#{example["name"]}' doesn’t match"
     end
-
   end
 end
