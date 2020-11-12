@@ -12,9 +12,9 @@ module GovukFrontend
 
     tag.strong(
       safe_join([
-        "\n  ".html_safe,
+        " ".html_safe,
         (params["html"] ? params["html"].html_safe : params["text"]),
-        "\n".html_safe
+        " ".html_safe
       ]),
       **attributes.symbolize_keys
     )
