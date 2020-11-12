@@ -1,6 +1,7 @@
 require "govuk-frontend/version"
 require "govuk-frontend/tag"
 require "govuk-frontend/warning_text"
+require "govuk-frontend/details"
 
 require 'action_view'
 
