@@ -1,4 +1,5 @@
 require "govuk-frontend/version"
+require "govuk-frontend/panel"
 require "govuk-frontend/tag"
 require "govuk-frontend/warning_text"
 require "govuk-frontend/details"
